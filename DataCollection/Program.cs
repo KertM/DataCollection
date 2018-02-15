@@ -107,12 +107,25 @@ namespace DataCollection
                 Console.WriteLine("Key = \"tif\" is not found");
             }
 
+            //vaatame kas "ht" võti on olemas, kui ei ole lisame
             if (!openWith.ContainsKey("ht"))
             {
                 openWith.Add("ht", "hyperterm.exe");
                 Console.WriteLine("Value added for key 'ht': {0}", openWith["ht"]);
             }
 
+            //Kpsime väärtused kasutades foreach tsüklis
+            foreach (KeyValuePair<string, string> kvp in openWith)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
+            }
+
+            //Küsime väärtused
+            Dictionary<string, string>.ValueCollection valueCollection = openWith.Values
+            foreach (string item in valueCollection)
+            {
+                Console.WriteLine("Key = {0}", item);
+            }
 
 
 
